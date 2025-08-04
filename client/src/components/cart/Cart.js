@@ -20,7 +20,7 @@ const Cart = () => {
     // console.log([inddata]);
 
     const getinddata = async () => {
-        const res = await fetch(`/getproductsone/${id}`, {
+        const res = await fetch(`${process.env.REACT_APP_BASE_URL}/getproductsone/${id}`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -46,7 +46,7 @@ const Cart = () => {
 
     const addtocart = async (id) => {
         console.log(id);
-        const check = await fetch(`/addcart/${id}`, {
+        const check = await fetch(`${process.env.REACT_APP_BASE_URL}/addcart/${id}`, {
             method: "POST",
             headers: {
                 Accept: "application/json",

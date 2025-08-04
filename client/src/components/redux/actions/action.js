@@ -1,6 +1,6 @@
 export const getProducts = () => async (dispatch) => {
     try {
-        const response = await fetch("/getproducts", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/getproducts`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

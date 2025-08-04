@@ -63,7 +63,7 @@ const Navbaar = () => {
     const { account, setAccount } = useContext(Logincontext);
 
     const getdetailsvaliduser = async () => {
-        const res = await fetch("/validuser", {
+        const res = await fetch(`${process.env.REACT_APP_BASE_URL}/validuser`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -90,7 +90,7 @@ const Navbaar = () => {
 
     // for logout
     const logoutuser = async () => {
-        const res2 = await fetch("/logout", {
+        const res2 = await fetch(`${process.env.REACT_APP_BASE_URL}/logout`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
