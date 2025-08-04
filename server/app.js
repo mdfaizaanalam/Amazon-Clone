@@ -9,7 +9,7 @@ require("./db/conn");
 const router = require("./routes/router");
 const products = require("./models/productsSchema");
 const jwt = require("jsonwebtoken");
-const cors = require("cors");
+
 
 
 
@@ -17,7 +17,13 @@ const cors = require("cors");
 // middleware
 app.use(express.json());
 app.use(cookieParser(""));
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: ["http://localhost:3000", "https://amazoncloneshop.netlify.app"],
+  credentials: true
+}));
+
 app.use(router);
 
 app.use(router);
